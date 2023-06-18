@@ -3,7 +3,7 @@ service: s3-file-uploader
 provider:
   name: aws
   runtime: nodejs18.x
-  stage: dev1
+  stage: dev
   region: ap-south-1
 
 custom:
