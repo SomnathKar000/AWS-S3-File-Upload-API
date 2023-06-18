@@ -7,7 +7,7 @@ provider:
   region: ap-south-1
 
 custom:
-  fileUploadBucketName: ${self:service}-bucket-${self:provider.stage}
+  fileUploadBucketName: s3-file-uploader-dev-serverlessdeploymentbucket-kge0lged157
 
 resources:
   Resources:
