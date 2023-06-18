@@ -7,7 +7,7 @@ provider:
   region: ap-south-1
 
 custom:
-  fileUploadBucketName: ${self:service}-bucket-${self:provider.stage}
+  fileUploadBucketName: ${self:service}-bucket-${self:provider.stage}-v1
 
 resources:
   Resources:
