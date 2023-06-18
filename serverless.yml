@@ -24,7 +24,7 @@ functions:
           path: files/upload
           method: POST
     iamRoleStatements:
-      - Effect: allow
+      - Effect: Allow
         Action:
           - "s3:Put*"
         Resource: "arn:aws:s3:::${self:custom.fileUploadBucketName}/"
