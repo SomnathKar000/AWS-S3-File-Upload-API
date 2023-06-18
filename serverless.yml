@@ -12,7 +12,7 @@ custom:
 resources:
   Resources:
     FileBucket:
-      Type: AWS::S::Bucket
+      Type: AWS::S3::Bucket
       Properties:
         BucketName: ${self:custom.BucketName}
         AccessControl: PublicRead
