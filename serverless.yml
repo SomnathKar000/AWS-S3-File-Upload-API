@@ -3,11 +3,11 @@ service: s3-file-uploader
 provider:
   name: aws
   runtime: nodejs18.x
-  stage: dev
+  stage: dev2
   region: ap-south-1
 
 custom:
-  fileUploadBucketName: s3-file-uploader-dev-serverlessdeploymentbucket-kge0lged157
+  fileUploadBucketName: ${self:service}-bucket-${self:provider.stage}
 
 resources:
   Resources:
