@@ -7,12 +7,12 @@ provider:
   region: ap-south-1
 
 custom:
-  BucketName: ${self.service}-bucket-${self.provider.stage}
+  fileUploadBucketName: ${self:service}-bucket-${self:provider.stage}
 
 resources:
   Resources:
     FileBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${self:custom.BucketName}
+        BucketName: ${self:custom.fileUploadBucketName}
         AccessControl: PublicRead
