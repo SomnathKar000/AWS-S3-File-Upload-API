@@ -17,7 +17,7 @@ functions:
     handler: controllers/uploadFileController.handler
     name: s3-file-uploader
     description: This function handles file uploads to S3.
-    timeout: 10 # seconds
+    timeout: 60 # seconds
     memorySize: 128 # mb
     events:
       - http:
@@ -37,4 +37,4 @@ resources:
       Type: AWS::S3::Bucket
       Properties:
         BucketName: ${self:custom.fileUploadBucketName}
-        AccessControl: Private
+        AccessControl: PublicRead
