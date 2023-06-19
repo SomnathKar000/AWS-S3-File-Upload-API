@@ -5,6 +5,11 @@ provider:
   runtime: nodejs18.x
   stage: dev3
   region: ap-south-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "s3:Put*"
+      Resource: arn:aws:s3:::${self:custom.fileUploadBucketName}/*
 
 custom:
   fileUploadBucketName: ${self:service}-bucket-${self:provider.stage}-v2
@@ -23,11 +28,6 @@ functions:
       - http:
           path: files/upload
           method: POST
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - "s3:Put*"
-        Resource: arn:aws:s3:::${self:custom.fileUploadBucketName}/*
     environment:
       FILE_UPLOAD_BUCKET_NAME: ${self:custom.fileUploadBucketName}
 
