@@ -22,7 +22,7 @@ functions:
     handler: controllers/uploadFileController.handler
     name: s3-file-uploader
     description: This function handles file uploads to S3.
-    timeout: 60 # seconds
+    timeout: 20 # seconds
     memorySize: 128 # mb
     events:
       - http:
